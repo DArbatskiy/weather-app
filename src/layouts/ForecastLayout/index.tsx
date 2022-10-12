@@ -18,9 +18,17 @@ export const ForecastLayout = () => {
 
   return (
     <div className={css.forecast}>
-      <div>
-        <button disabled={unitMeasure === 'celsius'} onClick={() => dispatch(chooseUnitMeasure('celsius'))}>°C</button>
-        <button disabled={unitMeasure === 'fahrenheit'} onClick={() => dispatch(chooseUnitMeasure('fahrenheit'))}>°F</button>
+      <div className={css.switcher}>
+        <button
+          className={css.switchButton}
+          disabled={unitMeasure === 'celsius'}
+          onClick={() => dispatch(chooseUnitMeasure('celsius'))}
+        >°C</button>
+        <button
+          className={css.switchButton}
+          disabled={unitMeasure === 'fahrenheit'}
+          onClick={() => dispatch(chooseUnitMeasure('fahrenheit'))}
+        >°F</button>
       </div>
       {data && <ForecastCards forecast={data.forecast.forecastday}  />}
       <div className={css.highlights}>

@@ -18,12 +18,12 @@ export const ForecastCards = ({forecast}: ForecastCardsProps) => {
         <div className={css.day}>{getDate(day.date)}</div>
         <img src={day.day.condition.icon} alt={day.day.condition.text} />
         <div className={css.temp}>
-          <span className={css.max}>
+          <div className={css.max}>
             {unitMeasure ==='celsius' ? `${Math.round(day.day.maxtemp_c)} °C` : `${Math.round(day.day.maxtemp_f)} °F`}
-          </span>
-          <span className={css.min}>
+          </div>
+          <div className={css.min}>
             {unitMeasure ==='celsius' ? `${Math.round(day.day.mintemp_c)} °C` : `${Math.round(day.day.mintemp_f)} °F`}
-          </span>
+          </div>
         </div>
       </div>
   ))

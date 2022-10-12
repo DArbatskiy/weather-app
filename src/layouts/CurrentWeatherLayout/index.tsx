@@ -5,6 +5,7 @@ import {searchIsOpen} from "../../redux/isSearchOpen.slice";
 import {IResponse} from "../../interfaces";
 import locationIcon from "../../data/icons/my_location.svg";
 import place from "../../data/icons/place.svg";
+import {useAppSelector} from "../../redux";
 
 import css from "./CurrentWeatherLayout.module.scss";
 
@@ -13,6 +14,7 @@ export type CurrentWeatherLayoutProps = {
 }
 
 export const CurrentWeatherLayout = ({data}: CurrentWeatherLayoutProps) => {
+  const unitMeasure = useAppSelector(state => state.unitMeasure.value)
   const dispatch = useDispatch()
 
   return (
@@ -33,7 +35,11 @@ export const CurrentWeatherLayout = ({data}: CurrentWeatherLayoutProps) => {
           src={data.current.condition.icon}
           alt={data.current.condition.text}
         />
-        <div className={css.temperature}><span>{data.current.temp_c}</span>℃</div>
+        <div className={css.temperature}>
+          <span>
+            {unitMeasure ==='celsius' ? `${Math.round(data.current.temp_c)} °C` : `${Math.round(data.current.temp_f)} °F`}
+          </span>
+        </div>
         <div className={css.cloudiness}>{data.current.condition.text}</div>
         <div className={css.date}>{data.location.localtime}</div>
         <div className={css.place}>

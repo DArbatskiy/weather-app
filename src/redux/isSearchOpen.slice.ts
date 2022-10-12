@@ -22,5 +22,4 @@ export const isSearchOpenSlice = createSlice({
 })
 
 export const { searchIsClose, searchIsOpen } = isSearchOpenSlice.actions
-
-export default isSearchOpenSlice.reducer
+export const isSearchOpenReducer =  isSearchOpenSlice.reducer

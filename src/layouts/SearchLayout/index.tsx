@@ -2,11 +2,11 @@ import React, {useState} from "react";
 
 import {searchIsClose} from "../../redux/isSearchOpen.slice";
 import {useLazySearchByCityQuery} from "../../redux/weather.api";
-
-import css from "./SearchLayout.module.scss";
-import {ICity} from "../../interfaces";
 import {chooseCity} from "../../redux/currentCity.slice";
 import {useAppDispatch} from "../../redux";
+import {ICity} from "../../interfaces";
+
+import css from "./SearchLayout.module.scss";
 
 export const SearchLayout = () => {
   const [search, setSearch] = useState('')

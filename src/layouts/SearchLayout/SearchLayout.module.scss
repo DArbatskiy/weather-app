@@ -1,0 +1,100 @@
+@import 'src/data/variables.module.scss';
+
+$way: "../../data/icons/search.svg";
+
+.search {
+  padding: 20px 46px;
+  background-color: $blue;
+}
+
+.closeButtonWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.closeButton {
+  @include button;
+  color: $white;
+  background-color: $blue;
+}
+
+.searchForm {
+  display: flex;
+  justify-content: space-between;
+
+  height: 48px;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    height: 17px;
+    width: 17px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1;
+    background-image: url($way);
+    background-size: contain;
+    pointer-events: none;
+  }
+}
+
+.searchInput {
+  position: relative;
+  height: 100%;
+  padding-left: 50px;
+  color: $gray;
+  box-sizing: border-box;
+  border: 1px solid $gray;
+  background-color: $blue;
+
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.searchSubmit {
+  margin-left: 12px;
+  position: relative;
+  @include button;
+  height: 100%;
+  color: $white;
+  background-color: #3C47E9;
+
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.city {
+  list-style: none;
+}
+
+.cityButton {
+  padding-left: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 100%;
+
+  background-color: $blue;
+  border: none;
+  color: $white;
+  text-align: left;
+
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+
+  &:hover {
+    border: 1px solid #616475;
+    cursor: pointer;
+  }
+}

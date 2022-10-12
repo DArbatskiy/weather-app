@@ -1,0 +1,94 @@
+@import 'src/data/variables.module.scss';
+
+.current {
+  padding: 42px 46px;
+
+  background-color: $blue;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+}
+
+.search_button {
+@include button;
+  padding: 11px 18px 10px;
+  background-color: $gray;
+
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  color: $white;
+  line-height: 19px;
+}
+
+.location_button {
+@include button;
+  background-color: $gray;
+  border-radius: 50%;
+  color: white;
+  padding: 0;
+  margin: 0;
+
+}
+
+.locationIcon {
+  width: 22px;
+  height: 22px;
+  padding: 9px;
+}
+
+.currentWeather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.currentWeatherImage {
+  margin: 100px 40px 0;
+  width: 100%;
+  max-width: 200px;
+}
+
+.temperature {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 56px;
+  color: $gray;
+
+  span {
+    font-weight: 500;
+    font-size: 144px;
+    line-height: 169px;
+    color: $white;
+  }
+}
+
+.cloudiness {
+  margin-top: 87px;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 42px;
+  color: $gray;
+}
+
+.date {
+  margin-top: 87px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: $gray;
+}
+
+.place {
+  margin-top: 32px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: $gray;
+}

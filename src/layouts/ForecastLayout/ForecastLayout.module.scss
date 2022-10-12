@@ -1,0 +1,17 @@
+@import 'src/data/variables.module.scss';
+
+.forecast {
+  padding: 42px 40px;
+  background-color: $dark_blue;
+}
+
+.highlightsCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 48px;
+}
+
+.highlightsCard {
+  background-color: $blue;
+}

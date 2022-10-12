@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import {SearchLayout} from "./layouts/SearchLayout";
+import {CurrentWeatherLayout} from "./layouts/CurrentWeatherLayout";
+import {ForecastLayout} from "./layouts/ForecastLayout";
+
+import {useAppSelector} from "./redux";
+import {useWeatherByCityQuery} from "./redux/weather.api";
+
+import css from './App.module.scss';
+
+const App = () => {
+  const isOpenSearch = useAppSelector((state) => state.isSearchOpen.value)
+  const currentCity = useAppSelector((state) => state.currentCity.value)
+
+  const {data} = useWeatherByCityQuery(currentCity)
+
+  if (!data) return null;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className={css.container}>
+        {isOpenSearch ? <SearchLayout /> : <CurrentWeatherLayout data={data} />}
+        <ForecastLayout />
+      </div>
   );
 }
 

@@ -1,0 +1,14 @@
+@import 'src/data/variables.module.scss';
+
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+
+  font-family: 'Raleway', sans-serif;
+  color: $white;
+}

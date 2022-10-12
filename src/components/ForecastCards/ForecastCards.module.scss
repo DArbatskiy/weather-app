@@ -1,0 +1,23 @@
+@import 'src/data/variables.module.scss';
+
+.forecastCards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 26px;
+}
+
+.forecastCard {
+  background-color: $blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 22px;
+}
+
+.day {
+  margin-bottom: 10px;
+}
+
+.temp {
+  margin-top: 31px;
+}

@@ -1,0 +1,17 @@
+$white: #FFFFFF;
+$gray: #6E707A;
+$blue: #1E213A;
+$dark_blue: #100E1D;
+
+@mixin button {
+  border: none;
+  //box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+}

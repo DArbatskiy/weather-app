@@ -5,7 +5,6 @@ $dark_blue: #100E1D;
 
 @mixin button {
   border: none;
-  //box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
   &:hover {
     cursor: pointer;
@@ -14,4 +13,25 @@ $dark_blue: #100E1D;
   &:active {
     box-shadow: none;
   }
+}
+
+@mixin text($weight: 500, $size: 16px,$lineHeight: 19px, $color: $white) {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $lineHeight;
+  color: $color;
+}
+
+@mixin pseudoImage($height, $width, $url) {
+  position: absolute;
+  content: "";
+  display: block;
+  height: $height;
+  width: $width;
+  z-index: 1;
+  background-image: url($url);
+  background-size: contain;
+  pointer-events: none;
 }

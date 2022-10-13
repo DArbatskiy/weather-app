@@ -6,68 +6,60 @@ $chevron: "../../data/icons/chevron_right.svg";
 
 .search {
   padding: 20px 46px;
+
   background-color: $blue;
 
   @media screen and (max-width: 639px) {
+    min-height: 100vh;
     padding: 20px 40px;
-    height: 100vh;
   }
 }
 
 .closeButtonWrapper {
   display: flex;
   justify-content: flex-end;
+
   margin-bottom: 30px;
 }
 
 .closeButton {
   @include button;
-  color: $white;
-  background-color: $blue;
 
   width: 25px;
   height: 25px;
+
+  background-color: $blue;
   background-image: url($close);
   background-size: contain;
+  color: $white;
 }
 
 .searchForm {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
 
   height: 48px;
-  position: relative;
+  margin-bottom: 30px;
 
   &::before {
-    content: "";
-    display: block;
-    height: 17px;
-    width: 17px;
-    position: absolute;
+    @include pseudoImage(17px, 17px, $search);
     top: 15px;
     left: 15px;
-    z-index: 1;
-    background-image: url($search);
-    background-size: contain;
-    pointer-events: none;
   }
 }
 
 .searchInput {
+  @include text(500, 16px, 21px, $gray);
+
   position: relative;
+  box-sizing: border-box;
   height: 100%;
   width: 100%;
   padding-left: 50px;
-  color: $gray;
-  box-sizing: border-box;
   border: 1px solid $gray;
-  background-color: $blue;
 
-  font-family: 'Raleway', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
+  background-color: $blue;
 
   &:focus-visible {
     outline: none;
@@ -75,34 +67,29 @@ $chevron: "../../data/icons/chevron_right.svg";
 }
 
 .searchSubmit {
-  margin-left: 12px;
-  position: relative;
   @include button;
-  height: 100%;
-  color: $white;
-  background-color: #3C47E9;
+  @include text();
 
-  font-family: 'Raleway', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
+  position: relative;
+
+  height: 100%;
+  margin-left: 12px;
+
+  background-color: #3C47E9;
 }
 
 .clearButtonWrapper {
   display: flex;
   justify-content: flex-end;
+
   margin-bottom: 10px;
 }
 
 .clearButton {
   @include button;
+  @include text($color: $gray);
+
   background: $blue;
-  font-family: 'Raleway', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  color: $gray;
 }
 
 .citiesList {
@@ -111,43 +98,30 @@ $chevron: "../../data/icons/chevron_right.svg";
 }
 
 .cityItem {
-  list-style: none;
   position: relative;
+  list-style: none;
 
   &:hover {
     &::before {
-      content: "";
-      display: block;
-      height: 30px;
-      width: 30px;
-      position: absolute;
+      @include pseudoImage(30px, 30px, $chevron);
       top: 6px;
       right: 3px;
-      z-index: 1;
-      background-image: url($chevron);
-      background-repeat: no-repeat;
-      background-size: contain;
-      pointer-events: none;
     }
   }
 }
 
 
 .cityButton {
+  @include text();
+
+  width: 100%;
   padding-left: 12px;
   padding-top: 12px;
   padding-bottom: 12px;
-  width: 100%;
-
-  background-color: $blue;
   border: none;
-  color: $white;
-  text-align: left;
 
-  font-family: 'Raleway', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
+  text-align: left;
+  background-color: $blue;
 
   &:hover {
     border: 1px solid #616475;

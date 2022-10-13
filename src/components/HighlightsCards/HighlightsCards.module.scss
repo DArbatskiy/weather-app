@@ -19,24 +19,20 @@
   flex-direction: column;
   align-items: center;
 
-  background-color: $blue;
   padding-top: 22px;
   padding-bottom: 37px;
+
+  background-color: $blue;
 }
 
 .heading {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  color: $white;
+  @include text();
 }
 
 .number {
-  margin-bottom: 6px;
+  @include text(700, 64px, 75px);
 
-  font-weight: 700;
-  font-size: 64px;
-  line-height: 75px;
+  margin-bottom: 6px;
 }
 
 .designation {

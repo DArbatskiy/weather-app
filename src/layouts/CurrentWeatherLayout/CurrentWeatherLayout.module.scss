@@ -6,37 +6,37 @@
   background-color: $blue;
 
   @media screen and (max-width: 639px) {
-    padding: 40px 40px;
     height: 100vh;
+    padding: 40px 40px;
   }
 }
 
 .navigation {
   display: flex;
   justify-content: space-between;
+
   height: 40px;
 }
 
 .search_button {
   @include button;
-  padding: 11px 18px 10px;
-  background-color: $gray;
+  @include text();
 
+  padding: 11px 18px 10px;
   border: none;
-  font-weight: 500;
-  font-size: 16px;
-  font-family: 'Raleway', sans-serif;
-  color: $white;
-  line-height: 19px;
+
+  background-color: $gray;
 }
 
 .location_button {
   @include button;
-  background-color: $gray;
-  border-radius: 50%;
-  color: white;
+
   padding: 0;
   margin: 0;
+  border-radius: 50%;
+
+  background-color: $gray;
+  color: white;
 
 }
 
@@ -53,54 +53,36 @@
 }
 
 .currentWeatherImage {
-  margin: 50px 40px 0;
   width: 100%;
   max-width: 150px;
+  margin: 50px 40px 0;
 }
 
 .temperature {
-  font-weight: 400;
-  font-size: 48px;
-  line-height: 56px;
-  color: $gray;
+  @include text(400, 48px, 56px, $gray);
 }
 
 .number {
-  font-weight: 500;
-  font-size: 144px;
-  line-height: 169px;
-  color: $white;
+  @include text(500, 144px, 169px, $white);
 }
 
 .unitMeasure {
-  font-weight: 400;
-  font-size: 48px;
-  line-height: 56px;
-  color: $gray;
+  @include text(400, 48px, 56px, $gray);
 }
 
 .cloudiness {
-  margin-top: 87px;
-  font-weight: 600;
-  font-size: 36px;
-  line-height: 42px;
-  color: $gray;
+  @include text(600, 36px, 42px, $gray);
+  margin-top: 50px;
 }
 
 .date {
-  margin-top: 87px;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
-
-  color: $gray;
+  @include text(500, 18px, 21px, $gray);
+  margin-top: 50px;
 }
 
 .place {
-  margin-top: 32px;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 21px;
+  @include text(600, 18px, 21px, $gray);
 
-  color: $gray;
+  margin-top: 32px;
+  margin-bottom: 30px;
 }

@@ -1,4 +1,4 @@
-@import 'src/data/variables.module.scss';
+@import "src/data/variables.module.scss";
 
 $search: "../../data/icons/search.svg";
 $close: "../../data/icons/close.svg";
@@ -75,7 +75,7 @@ $chevron: "../../data/icons/chevron_right.svg";
   height: 100%;
   margin-left: 12px;
 
-  background-color: #3C47E9;
+  background-color: #3c47e9;
 }
 
 .clearButtonWrapper {
@@ -109,7 +109,6 @@ $chevron: "../../data/icons/chevron_right.svg";
     }
   }
 }
-
 
 .cityButton {
   @include text();

@@ -1,6 +1,6 @@
-@import 'normalize.css';
+@import "normalize.css";
 
 body {
-    margin: 0;
-    background-color: #100E1D;
+  margin: 0;
+  background-color: #100e1d;
 }

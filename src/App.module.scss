@@ -1,5 +1,4 @@
-@import 'src/data/variables.module.scss';
-
+@import "src/data/variables.module.scss";
 
 .container {
   display: grid;
@@ -9,7 +8,7 @@
   width: 100%;
   margin: 0 auto;
 
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   color: $white;
 
   @media screen and (max-width: 639px) {

@@ -1,7 +1,7 @@
-$white: #FFFFFF;
-$gray: #6E707A;
-$blue: #1E213A;
-$dark_blue: #100E1D;
+$white: #ffffff;
+$gray: #6e707a;
+$blue: #1e213a;
+$dark_blue: #100e1d;
 
 @mixin button {
   border: none;
@@ -15,8 +15,8 @@ $dark_blue: #100E1D;
   }
 }
 
-@mixin text($weight: 500, $size: 16px,$lineHeight: 19px, $color: $white) {
-  font-family: 'Raleway', sans-serif;
+@mixin text($weight: 500, $size: 16px, $lineHeight: 19px, $color: $white) {
+  font-family: "Raleway", sans-serif;
   font-style: normal;
   font-weight: $weight;
   font-size: $size;

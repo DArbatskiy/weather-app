@@ -1,25 +1,25 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 type isSearchOpenState = {
-  value: boolean
-}
+  value: boolean;
+};
 
 const initialState: isSearchOpenState = {
   value: false,
-}
+};
 
 export const isSearchOpenSlice = createSlice({
-  name: 'isSearchOpen',
+  name: "isSearchOpen",
   initialState,
   reducers: {
-    searchIsClose: state => {
-      state.value = false
+    searchIsClose: (state) => {
+      state.value = false;
     },
-    searchIsOpen: state => {
-      state.value = true
-    }
-  }
-})
+    searchIsOpen: (state) => {
+      state.value = true;
+    },
+  },
+});
 
-export const { searchIsClose, searchIsOpen } = isSearchOpenSlice.actions
-export const isSearchOpenReducer =  isSearchOpenSlice.reducer
+export const { searchIsClose, searchIsOpen } = isSearchOpenSlice.actions;
+export const isSearchOpenReducer = isSearchOpenSlice.reducer;

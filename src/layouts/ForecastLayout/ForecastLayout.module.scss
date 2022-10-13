@@ -1,4 +1,4 @@
-@import 'src/data/variables.module.scss';
+@import "src/data/variables.module.scss";
 
 .forecast {
   padding: 42px 40px;
@@ -14,7 +14,7 @@
 }
 
 .switchButton {
-  @include text(700, 18px, 21px, #110E3C);
+  @include text(700, 18px, 21px, #110e3c);
 
   width: 40px;
   height: 40px;
@@ -27,7 +27,7 @@
 
   &:disabled {
     background-color: $gray;
-    color: #E7E7EB;
+    color: #e7e7eb;
   }
 }
 

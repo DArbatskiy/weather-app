@@ -8,6 +8,7 @@ import place from "../../data/icons/place.svg";
 import {useAppSelector} from "../../redux";
 
 import css from "./CurrentWeatherLayout.module.scss";
+import {getDate} from "../../services";
 
 export type CurrentWeatherLayoutProps = {
   data: IResponse
@@ -36,12 +37,15 @@ export const CurrentWeatherLayout = ({data}: CurrentWeatherLayoutProps) => {
           alt={data.current.condition.text}
         />
         <div className={css.temperature}>
-          <span>
-            {unitMeasure ==='celsius' ? `${Math.round(data.current.temp_c)} °C` : `${Math.round(data.current.temp_f)} °F`}
+          <span
+            className={css.number}>
+            {unitMeasure === 'celsius' ? `
+            ${Math.round(data.current.temp_c)}` : `${Math.round(data.current.temp_f)}`}
           </span>
+          <span className={css.unitMeasure}>{unitMeasure === 'celsius' ? `°C` : `°F`}</span>
         </div>
         <div className={css.cloudiness}>{data.current.condition.text}</div>
-        <div className={css.date}>{data.location.localtime}</div>
+        <div className={css.date}>{getDate(data.location.localtime)}</div>
         <div className={css.place}>
           <img src={place} alt={data.location.name}/>
           {data.location.name}

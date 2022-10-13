@@ -33,7 +33,7 @@ export const SearchLayout = () => {
   return (
     <div className={css.search}>
       <div className={css.closeButtonWrapper}>
-        <button className={css.closeButton}  onClick={() => dispatch(searchIsClose())}>X</button>
+        <button className={css.closeButton} onClick={() => dispatch(searchIsClose())}></button>
       </div>
       <div className={css.searchForm}>
         <input
@@ -43,28 +43,35 @@ export const SearchLayout = () => {
           onChange={e => handleInputChange(e)}
         />
       </div>
-      <div>
-        <ul>
+        <ul className={css.citiesList}>
           {citiesLoading && <p>Loading...</p>}
           {cities && cities.map((city: ICity) => (
-            <li className={css.city} key={city.id}>
+            <li className={css.cityItem} key={city.id}>
               <button
                 className={css.cityButton}
                 onClick={() => handleButtonClick(city.name)}
               >{city.name}</button>
             </li>
           ))}
-          {cityHistory.length > 0 && <button onClick={() => dispatch(clearHistory())}>Clean</button>}
-          {cityHistory && cityHistory.map((city) => (
-            <li className={css.city} key={city}>
-              <button
-                className={css.cityButton}
-                onClick={() => handleButtonClick(city)}
-              >{city}</button>
-            </li>
-          ))}
+          {!cities && cityHistory.length > 0 &&
+            <>
+              <div className={css.clearButtonWrapper}>
+                <button
+                  className={css.clearButton}
+                  onClick={() => dispatch(clearHistory())}
+                >Clear</button>
+              </div>
+              {cityHistory.map((city) => (
+                <li className={css.cityItem} key={city}>
+                  <button
+                    className={css.cityButton}
+                    onClick={() => handleButtonClick(city)}
+                  >{city}</button>
+                </li>
+              ))}
+            </>
+          }
         </ul>
-      </div>
     </div>
   )
 }

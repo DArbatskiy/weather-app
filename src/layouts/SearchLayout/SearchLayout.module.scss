@@ -1,26 +1,40 @@
 @import 'src/data/variables.module.scss';
 
-$way: "../../data/icons/search.svg";
+$search: "../../data/icons/search.svg";
+$close: "../../data/icons/close.svg";
+$chevron: "../../data/icons/chevron_right.svg";
 
 .search {
   padding: 20px 46px;
   background-color: $blue;
+
+  @media screen and (max-width: 639px) {
+    padding: 20px 40px;
+    height: 100vh;
+  }
 }
 
 .closeButtonWrapper {
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 30px;
 }
 
 .closeButton {
   @include button;
   color: $white;
   background-color: $blue;
+
+  width: 25px;
+  height: 25px;
+  background-image: url($close);
+  background-size: contain;
 }
 
 .searchForm {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 30px;
 
   height: 48px;
   position: relative;
@@ -34,7 +48,7 @@ $way: "../../data/icons/search.svg";
     top: 15px;
     left: 15px;
     z-index: 1;
-    background-image: url($way);
+    background-image: url($search);
     background-size: contain;
     pointer-events: none;
   }
@@ -43,6 +57,7 @@ $way: "../../data/icons/search.svg";
 .searchInput {
   position: relative;
   height: 100%;
+  width: 100%;
   padding-left: 50px;
   color: $gray;
   box-sizing: border-box;
@@ -73,9 +88,50 @@ $way: "../../data/icons/search.svg";
   font-size: 16px;
 }
 
-.city {
-  list-style: none;
+.clearButtonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
 }
+
+.clearButton {
+  @include button;
+  background: $blue;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: $gray;
+}
+
+.citiesList {
+  margin: 0;
+  padding: 0;
+}
+
+.cityItem {
+  list-style: none;
+  position: relative;
+
+  &:hover {
+    &::before {
+      content: "";
+      display: block;
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      top: 6px;
+      right: 3px;
+      z-index: 1;
+      background-image: url($chevron);
+      background-repeat: no-repeat;
+      background-size: contain;
+      pointer-events: none;
+    }
+  }
+}
+
 
 .cityButton {
   padding-left: 12px;

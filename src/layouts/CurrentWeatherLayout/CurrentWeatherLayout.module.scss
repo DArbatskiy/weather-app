@@ -4,6 +4,11 @@
   padding: 42px 46px;
 
   background-color: $blue;
+
+  @media screen and (max-width: 639px) {
+    padding: 40px 40px;
+    height: 100vh;
+  }
 }
 
 .navigation {
@@ -13,7 +18,7 @@
 }
 
 .search_button {
-@include button;
+  @include button;
   padding: 11px 18px 10px;
   background-color: $gray;
 
@@ -26,7 +31,7 @@
 }
 
 .location_button {
-@include button;
+  @include button;
   background-color: $gray;
   border-radius: 50%;
   color: white;
@@ -48,9 +53,9 @@
 }
 
 .currentWeatherImage {
-  margin: 100px 40px 0;
+  margin: 50px 40px 0;
   width: 100%;
-  max-width: 200px;
+  max-width: 150px;
 }
 
 .temperature {
@@ -58,13 +63,20 @@
   font-size: 48px;
   line-height: 56px;
   color: $gray;
+}
 
-  span {
-    font-weight: 500;
-    font-size: 144px;
-    line-height: 169px;
-    color: $white;
-  }
+.number {
+  font-weight: 500;
+  font-size: 144px;
+  line-height: 169px;
+  color: $white;
+}
+
+.unitMeasure {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 56px;
+  color: $gray;
 }
 
 .cloudiness {

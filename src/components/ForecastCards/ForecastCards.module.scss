@@ -4,6 +4,11 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 26px;
+
+  @media screen and (max-width: 639px) {
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 32px;
+  }
 }
 
 .forecastCard {

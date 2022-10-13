@@ -11,4 +11,8 @@
 
   font-family: 'Raleway', sans-serif;
   color: $white;
+
+  @media screen and (max-width: 639px) {
+    grid-template-columns: 1fr;
+  }
 }

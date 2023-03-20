@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { ICity, IResponse } from "../interfaces";
 
-const APIKEY = "38257396596c0fc346bbfb7fbfa86a22";
+const APIKEY = "dfa4fe62294e4248819105123232003";
 
 export const weatherApi = createApi({
   reducerPath: "weather/api",
